@@ -18,12 +18,11 @@ public class GetPokemonQueryHandler(
         
         try
         {
-            var pokemon = await pokeApiClient.GetResourceAsync<PokeApiNet.Pokemon>(request.Name, cancellationToken);
-            var species = await pokeApiClient.GetResourceAsync<PokeApiNet.PokemonSpecies>(pokemon.Species.Name, cancellationToken);
+            var species = await pokeApiClient.GetResourceAsync<PokeApiNet.PokemonSpecies>(request.Name, cancellationToken);
             
             response = new GetPokemonResponse
             {
-                Name = pokemon.Name,
+                Name = request.Name,
                 Description = species.FlavorTextEntries
                     .FirstOrDefault(f => f.Language.Name == "en")?.FlavorText
                     .Replace('\n', ' ')
