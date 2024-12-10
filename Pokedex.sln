@@ -9,11 +9,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pokedex.API", "src\Pokedex.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{A6BEEBF5-5420-4F14-8DD1-8AB9606BB807}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pokedex.API.Tests", "tests\Pokedex.API.Tests\Pokedex.API.Tests.csproj", "{ECC58FAD-4AF9-4541-BE58-46F783ED05AC}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pokedex.Infrastructure", "src\Pokedex.Infrastructure\Pokedex.Infrastructure.csproj", "{2489C6BD-E8BD-4C85-BD5B-FDA409E4299F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pokedex.Infrastructure.Tests", "tests\Pokedex.Infrastructure.Tests\Pokedex.Infrastructure.Tests.csproj", "{870BFF58-7A7D-4CB8-9328-E007474280DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pokedex.Application", "src\Pokedex.Application\Pokedex.Application.csproj", "{879FF614-B15A-4454-9320-947ECF0F8E52}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,10 +28,6 @@ Global
 		{63C35992-EA2F-4AE2-B00D-8E187FEE22B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{63C35992-EA2F-4AE2-B00D-8E187FEE22B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{63C35992-EA2F-4AE2-B00D-8E187FEE22B3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{ECC58FAD-4AF9-4541-BE58-46F783ED05AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ECC58FAD-4AF9-4541-BE58-46F783ED05AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{ECC58FAD-4AF9-4541-BE58-46F783ED05AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{ECC58FAD-4AF9-4541-BE58-46F783ED05AC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2489C6BD-E8BD-4C85-BD5B-FDA409E4299F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2489C6BD-E8BD-4C85-BD5B-FDA409E4299F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2489C6BD-E8BD-4C85-BD5B-FDA409E4299F}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -40,11 +36,15 @@ Global
 		{870BFF58-7A7D-4CB8-9328-E007474280DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{870BFF58-7A7D-4CB8-9328-E007474280DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{870BFF58-7A7D-4CB8-9328-E007474280DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{879FF614-B15A-4454-9320-947ECF0F8E52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{879FF614-B15A-4454-9320-947ECF0F8E52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{879FF614-B15A-4454-9320-947ECF0F8E52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{879FF614-B15A-4454-9320-947ECF0F8E52}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{63C35992-EA2F-4AE2-B00D-8E187FEE22B3} = {A544C651-9C73-4F77-B076-C3E3A8549220}
-		{ECC58FAD-4AF9-4541-BE58-46F783ED05AC} = {A6BEEBF5-5420-4F14-8DD1-8AB9606BB807}
 		{2489C6BD-E8BD-4C85-BD5B-FDA409E4299F} = {A544C651-9C73-4F77-B076-C3E3A8549220}
 		{870BFF58-7A7D-4CB8-9328-E007474280DF} = {A6BEEBF5-5420-4F14-8DD1-8AB9606BB807}
+		{879FF614-B15A-4454-9320-947ECF0F8E52} = {A544C651-9C73-4F77-B076-C3E3A8549220}
 	EndGlobalSection
 EndGlobal

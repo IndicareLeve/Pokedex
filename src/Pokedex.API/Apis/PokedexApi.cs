@@ -1,5 +1,6 @@
-﻿using Microsoft.AspNetCore.Http.HttpResults;
-using Pokedex.API.Models;
+﻿using MediatR;
+using Microsoft.AspNetCore.Http.HttpResults;
+using Pokedex.Application.Pokemon.GetPokemon;
 
 namespace Pokedex.API.Apis;
 
@@ -13,13 +14,19 @@ public static class PokedexApi
         return app;
     }
     
-    private static async Task<Results<Ok<Pokemon>, NotFound, BadRequest<string>>> GetPokemon(string name)
+    private static async Task<Results<Ok<GetPokemonResponse>, NotFound>> GetPokemon(
+        IMediator mediator,
+        string name)
     {
-        throw new NotImplementedException();
+        var pokemon = await mediator.Send(new GetPokemonQuery { Name = name, Translate = false });
+        return pokemon is null ? TypedResults.NotFound() : TypedResults.Ok(pokemon);
     }
     
-    private static async Task<Results<Ok<Pokemon>, NotFound, BadRequest<string>>> GetTranslatedPokemon(string name)
+    private static async Task<Results<Ok<GetPokemonResponse>, NotFound>> GetTranslatedPokemon(
+        IMediator mediator,
+        string name)
     {
-        throw new NotImplementedException();
+        var pokemon = await mediator.Send(new GetPokemonQuery { Name = name, Translate = true });
+        return pokemon is null ? TypedResults.NotFound() : TypedResults.Ok(pokemon);
     }
 }

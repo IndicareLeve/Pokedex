@@ -10,14 +10,13 @@ public static class DependencyInjection
     public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration config)
     {
         AddFunTranslations(services, config);
-        services.AddScoped<ITranslateService, FunTranslateService>();
 
         return services;
     }
     
     private static void AddFunTranslations(this IServiceCollection services, IConfiguration config)
     {
-        services.AddHttpClient<FunTranslateService>(client =>
+        services.AddHttpClient<ITranslateService, FunTranslateService>(client =>
         {
             var uri = config["FunTranslations:BaseUrl"];
             if (string.IsNullOrWhiteSpace(uri))
