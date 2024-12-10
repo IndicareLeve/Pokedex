@@ -8,7 +8,6 @@ public static class DependencyInjection
 {
     public static IServiceCollection AddApplication(this IServiceCollection services, ConfigurationManager config)
     {
-        services.AddSingleton<PokeApiClient>();
         services.AddMediator();
 
         return services;

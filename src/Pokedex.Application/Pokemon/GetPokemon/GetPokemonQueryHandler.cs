@@ -2,12 +2,13 @@
 using MediatR;
 using Microsoft.Extensions.Logging;
 using PokeApiNet;
+using Pokedex.Infrastructure.Services.PokeApi;
 using Pokedex.Infrastructure.Services.Translators;
 
 namespace Pokedex.Application.Pokemon.GetPokemon;
 
 public class GetPokemonQueryHandler(
-    PokeApiClient pokeApiClient,
+    IPokeApiService pokeApiService,
     ITranslateService translateService,
     ILogger<GetPokemonQueryHandler> logger)
     : IRequestHandler<GetPokemonQuery, GetPokemonResponse?>
@@ -18,7 +19,7 @@ public class GetPokemonQueryHandler(
         
         try
         {
-            var species = await pokeApiClient.GetResourceAsync<PokeApiNet.PokemonSpecies>(request.Name, cancellationToken);
+            var species = await pokeApiService.GetPokemonSpeciesAsync(request.Name, cancellationToken);
             
             response = new GetPokemonResponse
             {
